@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffd1dc 0%, #ffb3c1 50%, #ff8fab 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: float 10s infinite;
+    opacity: 0.6;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.bubu-dudu {
+    width: 150px;
+    height: 150px;
+    margin: 15px auto;
+    border-radius: 15px;
+    object-fit: contain;
+    display: block;
+}
+
+h1 {
+    color: #ff1493;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+}
+
+.message {
+    color: #d63384;
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffe5ec 0%, #ffc9d9 100%);
+    border-radius: 15px;
+    border-left: 5px solid #ff69b4;
+}
+
+.question {
+    font-size: 1.5em;
+    color: #ff1493;
+    margin: 30px 0 20px 0;
+    font-weight: bold;
+}
+
+.plea-text {
+    font-size: 1.3em;
+    color: #ff69b4;
+    font-weight: bold;
+    min-height: 35px;
+    margin: 15px 0;
+    animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+    min-height: 80px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+    position: relative;
+}
+
+.yes-btn {
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+    color: white;
+    z-index: 10;
+}
+
+.yes-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.6);
+}
+
+.no-btn {
+    background: linear-gradient(135deg, #ffc9d9 0%, #ffb3c1 100%);
+    color: #d63384;
+    transition: all 0.2s ease;
+}
+
+.no-btn:hover {
+    transform: scale(1.05);
+}
+
+.counter-container {
+    display: none;
+    animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.counter {
+    font-size: 3em;
+    color: #ff1493;
+    font-weight: bold;
+    margin: 20px 0;
+    text-shadow: 3px 3px 6px rgba(255, 105, 180, 0.3);
+}
+
+.counter-label {
+    font-size: 1.1em;
+    color: #d63384;
+    margin-bottom: 15px;
+}
+
+.love-message {
+    font-size: 1.2em;
+    color: #ff69b4;
+    margin: 25px 0;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+    line-height: 1.5;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.initial-content {
+    display: block;
+}
+
+.emoji {
+    font-size: 1.5em;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .message {
+        font-size: 1em;
+        padding: 15px;
+    }
+    
+    .bubu-dudu {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .counter {
+        font-size: 2.5em;
+    }
+    
+    .counter-label {
+        font-size: 1em;
+    }
+    
+    .love-message {
+        font-size: 1.1em;
+    }
+    
+    button {
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+    
+    .question {
+        font-size: 1.2em;
+    }
+    
+    .plea-text {
+        font-size: 1.1em;
+    }
+}
