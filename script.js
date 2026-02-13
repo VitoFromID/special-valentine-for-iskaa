@@ -3,16 +3,17 @@ let noClickCount = 0;
 
 // Array pesan "pls mau" yang makin desperate
 const pleaMessages = [
-    "Pls mau 🥺",
-    "Pls mau dong 🥺",
-    "Pls mau ya 🥺💕",
-    "Pls mau dong sayang 🥺❤️",
-    "Pls mau please 🥺💖",
-    "Ayolah pls mau 🥺✨",
-    "Aku mohon pls mau 🥺💝",
-    "Pls mau ya sayangku 🥺💗",
-    "Jangan gitu dong, pls mau 🥺💘",
-    "Ayo dong pls mau 🥺💓"
+    "pls mau 🥺",
+    "pls mau dong 🥺",
+    "pls mau ya 🥺💕",
+    "pls mau dong sayang 🥺❤️",
+    "pls mau please 🥺💖",
+    "ayolah pls mau 🥺✨",
+    "aku mohon pls mau 🥺💝",
+    "pls mau ya sayangku 🥺💗",
+    "jangan gitu dong, pls mau 🥺💘",
+    "ayo dong pls mau 🥺💓",
+    "sayang ayolah pls mau🥺💓"
 ];
 
 // Create floating hearts
@@ -33,7 +34,7 @@ function createHearts() {
 
 // Calculate days together
 function calculateDays() {
-    const startDate = new Date('2025-09-20');
+    const startDate = new Date('2025-09-19');
     const today = new Date();
     const diffTime = Math.abs(today - startDate);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -127,4 +128,11 @@ function moveNoButton() {
 window.addEventListener('load', () => {
     createHearts();
 });
-        
+
+// Function to send WhatsApp message
+function sendWhatsApp() {
+    const phoneNumber = '6287777092683';
+    const message = 'I love you Ganteng ❤️';
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+}
