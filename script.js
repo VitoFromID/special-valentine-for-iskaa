@@ -127,3 +127,4 @@ function moveNoButton() {
 window.addEventListener('load', () => {
     createHearts();
 });
+    
