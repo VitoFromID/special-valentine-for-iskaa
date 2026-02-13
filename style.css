@@ -112,6 +112,38 @@ h1 {
     border-left: 5px solid #ff69b4;
 }
 
+.msg-line {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.msg-delay-1 {
+    animation-delay: 0.3s;
+}
+
+.msg-delay-2 {
+    animation-delay: 0.8s;
+}
+
+.msg-delay-3 {
+    animation-delay: 1.3s;
+}
+
+.msg-delay-4 {
+    animation-delay: 1.8s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .question {
     font-size: 1.5em;
     color: #ff1493;
